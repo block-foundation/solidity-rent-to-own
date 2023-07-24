@@ -4,6 +4,9 @@ pragma solidity >=0.7.0 <0.9.0;
 
 contract RentToOwn {
 
+    // Parameters
+    // ========================================================================
+
     address payable public landlord;
     address payable public tenant;
     uint public rentAmount;
@@ -15,8 +18,9 @@ contract RentToOwn {
     uint public blocksForPayment; // Number of blocks to wait for payment
     uint public cancellationPenalty; // Percentage of totalPaid to keep on cancellation
 
-    // Event to emit each time a payment is made
-    event PaymentMade(address from, uint amount);
+
+    // Constructor
+    // ========================================================================
 
     constructor(
         address payable _landlord, 
@@ -37,7 +41,19 @@ contract RentToOwn {
         blocksForPayment = _blocksForPayment;
         cancellationPenalty = _cancellationPenalty;
     }
-    
+
+    // Events
+    // ========================================================================
+
+    // Event to emit each time a payment is made
+    event PaymentMade(
+        address from,
+        uint amount
+    );
+
+    // Methods
+    // ========================================================================
+
     function payRent() public payable {
         require(
             msg.sender == tenant,
