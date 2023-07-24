@@ -1,6 +1,6 @@
 {
-  "name": "solidity-land-registry",
-  "description": "Decentralized Land Registry",
+  "name": "solidity-rent-to-own",
+  "description": "Rent-to-Own",
   "author": "Stichting Block Foundation",
   "version": "0.0.1",
   "license": "Apache-2.0",
@@ -9,13 +9,13 @@
     "blockchain",
     "architecture"
   ],
-  "homepage": "https://github.com/block-foundation/solidity-land-registry#readme",
+  "homepage": "https://github.com/block-foundation/solidity-rent-to-own#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/block-foundation/solidity-land-registry.git"
+    "url": "git+https://github.com/block-foundation/solidity-rent-to-own.git"
   },
   "bugs": {
-    "url": "https://github.com/block-foundation/solidity-land-registry/issues"
+    "url": "https://github.com/block-foundation/solidity-rent-to-own/issues"
   },
   "main": "index.ts",
   "scripts": {
