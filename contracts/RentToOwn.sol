@@ -20,7 +20,8 @@ pragma solidity ^0.8.19;
 
 
 /// @title Rent-to-Own Contract
-/// @dev This contract facilitates rent-to-own agreements where a portion of monthly rent payments goes towards eventual ownership of the property.
+/// @dev This contract facilitates rent-to-own agreements where a portion of 
+/// monthly rent payments goes towards eventual ownership of the property.
 contract RentToOwn {
 
 
@@ -106,7 +107,9 @@ contract RentToOwn {
     // Methods
     // ========================================================================
     /// @notice Allows the tenant to pay the rent
-    /// @dev This function accepts payment from the tenant and transfers it to the landlord. If the total paid is sufficient, it marks the property as owned.
+    /// @dev This function accepts payment from the tenant and transfers it to
+    /// the landlord. If the total paid is sufficient, it marks the property as
+    /// owned.
     function payRent() public payable {
         // Checks that the sender is the tenant
         require(
@@ -146,7 +149,8 @@ contract RentToOwn {
     }
 
     /// @notice Allows the landlord to adjust the rent
-    /// @dev This function allows the landlord to adjust the rent, with restrictions on the increase amount.
+    /// @dev This function allows the landlord to adjust the rent, with
+    /// restrictions on the increase amount.
     /// @param _newRentAmount The new rent amount
     function adjustRent(uint _newRentAmount) public {
         // Checks that the sender is the landlord
@@ -185,7 +189,8 @@ contract RentToOwn {
     }
 
     /// @notice Checks if a rent payment is due
-    /// @dev Compares the current block number to the last payment block and the blocks per payment
+    /// @dev Compares the current block number to the last payment block and
+    /// the blocks per payment
     /// @return true if a payment is due, false otherwise
     function checkPaymentDue() public view returns (bool) {
         return block.number > lastPaymentBlock + blocksForPayment;
